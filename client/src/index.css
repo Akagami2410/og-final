@@ -331,6 +331,9 @@ ul {
         width: 16px;
         height: 16px;
     }
+    .card-txt {
+        margin-bottom: 30px;
+    }
 }
 
 .videosw-feature-section {
@@ -544,17 +547,17 @@ ul {
     .hebh {
         width:300px;
     }
-    .card-grid {
-        gap:40px;
+    
+}
+.hide-scroll {
+        
         scrollbar-width: none; 
         -ms-overflow-style: none;  
         }
 
-        .card-grid::-webkit-scrollbar {
+        .hide-scroll::-webkit-scrollbar {
         display: none; 
         }
-}
-
 .videosws-columns {
     display: flex;
     align-items: flex-start;
