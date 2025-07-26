@@ -197,12 +197,16 @@ export default function ImageSlider() {
   return (
     <section className="image-slider pt-28 relative overflow-hidden w-full">
       <div className="slider-containers">
-
         {/* FIRST WRAPPER (Scrolling) */}
         <div className="slider-container overflow-hidden">
           <div ref={wrapperRef1} className="flex w-full ">
             {[...Array(2)].map((_, i) => (
-              <div className='w-full min-w-[max-content] flex-none basis-full px-8' key={i}>{renderSliderGroup1(setZoomedImage)}</div>
+              <div
+                className="w-full min-w-[max-content] flex-none basis-full px-8"
+                key={i}
+              >
+                {renderSliderGroup1(setZoomedImage)}
+              </div>
             ))}
           </div>
         </div>
@@ -211,18 +215,30 @@ export default function ImageSlider() {
         <div className="middle overflow-hidden max-lg:pt-10">
           <div ref={wrapperRef2} className="flex w-full relative ">
             {[...Array(2)].map((_, i) => (
-              <div className='w-full flex-none basis-full px-8' key={i}>{renderSliderGroup2(setZoomedImage)}</div>
+              <div className="w-full flex-none basis-full px-8" key={i}>
+                {renderSliderGroup2(setZoomedImage)}
+              </div>
             ))}
           </div>
 
           {/* TEXT IN MIDDLE (STATIC) */}
-          <div className="Text-content w-[max-content] mx-auto">
-            <h1 className="text-[40px] xs:text-[50px] leading-10 lg:text-[100px] lg:leading-20 !important text-center leading- ">
+          <div className="Text-content max-w-[max-content] mx-auto max-lg:pb-2 max-lg:px-14">
+            <h1 className="text-[40px] xs:text-[50px]  leading-9 max-xs:leading-7 lg:text-[100px] lg:leading-20 !important text-center leading- ">
               <span className="font-absolute text-[var(--blue)]">OG WATER</span>
-              <span className="font-parslay font-normal text-[var(--candypink)]">stands</span><br />
-              <span className="font-parslay relative font-normal text-[var(--candypink)] z-10">out</span>
-              <span className="font-absolute text-[var(--blue)] ml-12">IN THE CHAOS</span><br />
-              <span className="font-absolute text-[var(--blue)]">OF THE SHELF.</span>
+              <span className="font-parslay font-normal text-[var(--candypink)]">
+                stands
+              </span>
+              <br />
+              <span className="font-parslay relative font-normal text-[var(--candypink)] z-10">
+                out
+              </span>
+              <span className="font-absolute text-[var(--blue)] ml-12">
+                IN THE CHAOS
+              </span>
+              <br />
+              <span className="font-absolute text-[var(--blue)]">
+                OF THE SHELF.
+              </span>
             </h1>
           </div>
         </div>
@@ -231,11 +247,15 @@ export default function ImageSlider() {
         <div className="slide-container overflow-hidden -translate-y-[30px] max-lg:-translate-y-[20px] z-50">
           <div ref={wrapperRef3} className="flex w-full">
             {[...Array(2)].map((_, i) => (
-              <div className='w-full min-w-[max-content] flex-none basis-full px-8' key={i}>{renderSliderGroup3(setZoomedImage)}</div>
+              <div
+                className="w-full min-w-[max-content] flex-none basis-full px-8"
+                key={i}
+              >
+                {renderSliderGroup3(setZoomedImage)}
+              </div>
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

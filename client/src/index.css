@@ -116,6 +116,7 @@ span {
 .Card,
 .card-image {
     max-width: 300px;
+    width: 100%;
 }
 
 .card-images {
@@ -504,10 +505,12 @@ ul {
 
     .video-wrapper {
         margin: 0 auto !important;
+        max-width: 60%;
     }
-
+    
     .video-wrappers {
         margin: 0 auto !important;
+        max-width: 60%;
     }
 
     .section-heading-video {
@@ -541,6 +544,15 @@ ul {
     .hebh {
         width:300px;
     }
+    .card-grid {
+        gap:40px;
+        scrollbar-width: none; 
+        -ms-overflow-style: none;  
+        }
+
+        .card-grid::-webkit-scrollbar {
+        display: none; 
+        }
 }
 
 .videosws-columns {

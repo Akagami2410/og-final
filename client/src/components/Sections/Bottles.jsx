@@ -50,18 +50,31 @@ export default function Bottles() {
     ]
 
     return (
-        <section className="flex w-full justify-center py-[80px] lg:py-[138px] " >
-            <div className="w-full max-w-[924px] flex flex-col justify-center items-center">
-
-                <h1 className="font-absolute hebh text-6xl text-center mb-[63px]" ><span className="text-[var(--blue)]" >AVAILABLE AS</span> <span className="text-[var(--candypink)]" >YOU LIKE IT</span></h1>
-                <div className="flex gap-6 lg:gap-20" >
-                    {[...bottles].map(({ name, image, quant, svg, info, height, mheight }, index) => (
-                        <Bottle key={index} name={name} image={image} svg={svg} info={info} height={height} quant={quant} mheight={mheight} />
-                    ))}
-                </div>
-            </div>
-        </section>
-    )
+      <section className="flex w-full justify-center py-[80px] lg:py-[138px] ">
+        <div className="w-full max-w-[924px] flex flex-col justify-center items-center">
+          <h1 className="font-absolute changes-made hebh max-md:text-[50px] max-md:leading-10 text-6xl text-center mb-[63px]">
+            <span className="text-[var(--blue)]">AVAILABLE AS</span>{" "}
+            <span className="text-[var(--candypink)]">YOU LIKE IT</span>
+          </h1>
+          <div className="flex gap-6 lg:gap-20">
+            {[...bottles].map(
+              ({ name, image, quant, svg, info, height, mheight }, index) => (
+                <Bottle
+                  key={index}
+                  name={name}
+                  image={image}
+                  svg={svg}
+                  info={info}
+                  height={height}
+                  quant={quant}
+                  mheight={mheight}
+                />
+              )
+            )}
+          </div>
+        </div>
+      </section>
+    );
 
 
 
