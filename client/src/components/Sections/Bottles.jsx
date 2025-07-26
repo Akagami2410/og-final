@@ -56,21 +56,23 @@ export default function Bottles() {
             <span className="text-[var(--blue)]">AVAILABLE AS</span>{" "}
             <span className="text-[var(--candypink)]">YOU LIKE IT</span>
           </h1>
-          <div className="flex gap-6 lg:gap-20">
-            {[...bottles].map(
-              ({ name, image, quant, svg, info, height, mheight }, index) => (
-                <Bottle
-                  key={index}
-                  name={name}
-                  image={image}
-                  svg={svg}
-                  info={info}
-                  height={height}
-                  quant={quant}
-                  mheight={mheight}
-                />
-              )
-            )}
+          <div className="w-full overflow-hidden">
+            <div className="flex gap-6 lg:gap-20 overflow-auto hide-scroll">
+              {[...bottles].map(
+                ({ name, image, quant, svg, info, height, mheight }, index) => (
+                  <Bottle
+                    key={index}
+                    name={name}
+                    image={image}
+                    svg={svg}
+                    info={info}
+                    height={height}
+                    quant={quant}
+                    mheight={mheight}
+                  />
+                )
+              )}
+            </div>
           </div>
         </div>
       </section>

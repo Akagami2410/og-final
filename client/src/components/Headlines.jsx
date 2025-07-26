@@ -49,7 +49,7 @@ const Headlines = () => {
             {cardsData.map((card, index) => (
               <div
                 key={index}
-                className="flex-none w-[calc((100%-(1*20px))/1.5)] md:w-[calc((100%-(2*40px))/3)] lg:w-[calc((100%-(0*20px))/4)] pl-4 md:pl-0"
+                className="flex-none w-[calc((100%-(1*20px))/1.5)] md:w-[calc((100%-(2*40px))/3)] lg:w-[calc((100%-(0*20px))/4)] px-4 md:px-0"
               >
                 <div className="flex flex-col">
                   <div className="card-img">

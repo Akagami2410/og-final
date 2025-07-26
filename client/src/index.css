@@ -528,7 +528,7 @@ ul {
         text-align: center !important;
         letter-spacing: 1px !important;
         line-height: 45px !important;
-        width: 350px;
+        max-width: 350px;
     }
 
     .videosw-description,

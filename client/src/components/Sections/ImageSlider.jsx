@@ -222,23 +222,16 @@ export default function ImageSlider() {
           </div>
 
           {/* TEXT IN MIDDLE (STATIC) */}
-          <div className="Text-content max-w-[max-content] mx-auto max-lg:pb-2 max-lg:px-14">
-            <h1 className="text-[40px] xs:text-[50px]  leading-9 max-xs:leading-7 lg:text-[100px] lg:leading-20 !important text-center leading- ">
-              <span className="font-absolute text-[var(--blue)]">OG WATER</span>
+          <div className="Text-content mx-auto max-w-[286px] md:max-w-[674px]">
+            <h1 className="text-[50px] md:text-[100px] leading-[40px] lg:leading-[80px]  text-center font-absolute text-[var(--blue)]">
+              OG WATER
               <span className="font-parslay font-normal text-[var(--candypink)]">
-                stands
+                stands{" "}
               </span>
-              <br />
-              <span className="font-parslay relative font-normal text-[var(--candypink)] z-10">
-                out
+              <span className="font-parslay font-normal text-[var(--candypink)] relative z-10">
+                out{" "}
               </span>
-              <span className="font-absolute text-[var(--blue)] ml-12">
-                IN THE CHAOS
-              </span>
-              <br />
-              <span className="font-absolute text-[var(--blue)]">
-                OF THE SHELF.
-              </span>
+              IN THE CHAOS OF THE SHELF.
             </h1>
           </div>
         </div>
