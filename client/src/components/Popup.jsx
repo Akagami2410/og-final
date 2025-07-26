@@ -1,14 +1,14 @@
-import { useState,useContext } from "react";
+import { useState, useContext } from "react";
 import OverlayContext from "../context/OverlayContext";
 
 export default function Popup() {
-  const {overlayVisible,setOverlayVisible} = useContext(OverlayContext);
+  const { overlayVisible, setOverlayVisible } = useContext(OverlayContext);
   const [loading, setLoading] = useState(false);
+  const [phoneError, setPhoneError] = useState("");
 
-  const handleclick = ()=>{
+  const handleclick = () => {
     setOverlayVisible(false);
-  }
-
+  };
 
   const [formData, setFormData] = useState({
     name: "",
@@ -17,55 +17,86 @@ export default function Popup() {
     state: "",
     company: "",
     role: "",
-    message: ""
-  })
+    message: "",
+  });
 
-   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const validatePhone = (phone) => {
+    // Indian mobile numbers: 10 digits, starts with 7,8,9
+    const phoneRegex = /^[789]\d{9}$/;
+    if (!phoneRegex.test(phone)) {
+      return "Enter valid 10-digit Indian mobile number starting with 7,8,9";
+    }
+    return "";
   };
 
-   const handleSubmit = async (e) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    if (name === "phone") {
+      // Allow only digits and max length 10
+      const cleaned = value.replace(/\D/g, "").slice(0, 10);
+      setFormData((prev) => ({ ...prev, [name]: cleaned }));
+      const err = validatePhone(cleaned);
+      setPhoneError(err);
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (phoneError) return; // prevent submit if phone invalid
     setLoading(true);
 
     try {
-      const res = await fetch("https://og-final-backend.onrender.com/api/send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        "https://og-final-backend.onrender.com/api/send",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const data = await res.json();
       if (data.success) {
         alert("Form submitted successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          state: "",
+          company: "",
+          role: "",
+          message: "",
+        });
+        setPhoneError("");
       } else {
         alert("Error: " + data.message);
       }
     } catch (err) {
       console.error(err);
       alert("Failed to send message.");
-    } finally{
+    } finally {
       setLoading(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        state: "",
-        company: "",
-        role: "",
-        message: ""
-      }); // Reset form data
     }
   };
 
   return (
-    <div className={`fixed inset-0 bg-black/60 transition-opacity duration-300 z-[9999] p-4 overflow-y-auto ${
-  overlayVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-}`} >
-
-      <div className="pt-4 rounded-lg bg-white shadow-sm max-w-[95%] mx-auto" >
+    <div
+      className={`fixed inset-0 bg-black/60 transition-opacity duration-300 z-[9999] p-4 overflow-y-auto ${
+        overlayVisible
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
+      }`}
+    >
+      <div className="pt-4 rounded-lg bg-white shadow-sm max-w-[95%] mx-auto">
         <div className="flex justify-end pr-4">
-          <button className="cursor-pointer" onClick={handleclick}>
+          <button
+            className="cursor-pointer"
+            onClick={handleclick}
+            aria-label="Close popup"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="22"
@@ -80,9 +111,13 @@ export default function Popup() {
             </svg>
           </button>
         </div>
-        <div className="p-10" >
-          <h2 className="font-anton text-4xl mb-20 ">Collaborate with OG Wtr</h2>
-          <form className="grid grid-cols-1 md:grid-cols-3 gap-6 " onSubmit={handleSubmit}>
+        <div className="p-10">
+          <h2 className="font-anton text-4xl mb-20">Collaborate with OG Wtr</h2>
+          <form
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            onSubmit={handleSubmit}
+            noValidate
+          >
             {/* Name */}
             <div className="flex flex-col">
               <label htmlFor="name" className="text-sm font-medium mb-1">
@@ -95,6 +130,7 @@ export default function Popup() {
                 placeholder="Enter your full name"
                 className="border-b border-gray-300 focus:outline-none focus:border-black py-2"
                 onChange={handleChange}
+                value={formData.name}
                 required
               />
             </div>
@@ -111,6 +147,7 @@ export default function Popup() {
                 placeholder="Enter your email"
                 className="border-b border-gray-300 focus:outline-none focus:border-black py-2"
                 onChange={handleChange}
+                value={formData.email}
                 required
               />
             </div>
@@ -125,10 +162,20 @@ export default function Popup() {
                 id="phone"
                 name="phone"
                 placeholder="Enter 10 digit number"
-                className="border-b border-gray-300 focus:outline-none focus:border-black py-2"
+                className={`border-b py-2 focus:outline-none ${
+                  phoneError
+                    ? "border-red-500"
+                    : "border-gray-300 focus:border-black"
+                }`}
                 onChange={handleChange}
+                value={formData.phone}
                 required
+                maxLength={10}
+                inputMode="numeric"
               />
+              {phoneError && (
+                <p className="text-red-500 text-xs mt-1">{phoneError}</p>
+              )}
             </div>
 
             {/* State */}
@@ -143,6 +190,7 @@ export default function Popup() {
                 placeholder="Enter your state"
                 className="border-b border-gray-300 focus:outline-none focus:border-black py-2"
                 onChange={handleChange}
+                value={formData.state}
                 required
               />
             </div>
@@ -159,10 +207,11 @@ export default function Popup() {
                 placeholder="Enter your company name"
                 onChange={handleChange}
                 className="border-b border-gray-300 focus:outline-none focus:border-black py-2"
+                value={formData.company}
               />
             </div>
 
-            {/* I am a (Dropdown) */}
+            {/* Role */}
             <div className="flex flex-col">
               <label htmlFor="role" className="text-sm font-medium mb-1">
                 I am a
@@ -172,15 +221,16 @@ export default function Popup() {
                 name="role"
                 className="border-b border-gray-300 focus:outline-none focus:border-black py-2 bg-transparent"
                 onChange={handleChange}
+                value={formData.role}
               >
-                <option>Select who are you?</option>
-                <option>Retailer</option>
-                <option>Distributor</option>
-                <option>Individual</option>
+                <option value="">Select who are you?</option>
+                <option value="Retailer">Retailer</option>
+                <option value="Distributor">Distributor</option>
+                <option value="Individual">Individual</option>
               </select>
             </div>
 
-            {/* Additional Message (full width) */}
+            {/* Message */}
             <div className="flex flex-col md:col-span-3">
               <label htmlFor="message" className="text-sm font-medium mb-1">
                 Anything else you’d like to add?
@@ -192,21 +242,29 @@ export default function Popup() {
                 rows={3}
                 className="border-b border-gray-300 focus:outline-none focus:border-black py-2"
                 onChange={handleChange}
+                value={formData.message}
               ></textarea>
             </div>
 
-            {/* Submit Button (left-aligned) */}
+            {/* Submit */}
             <div className="md:col-span-3">
               <button
                 type="submit"
-                className="bg-[#002E6D] text-white px-8 py-2 rounded-md hover:bg-[#001c48] transition-all duration-300"
+                className="bg-[#002E6D] text-white px-8 py-2 rounded-md hover:bg-[#001c48] transition-all duration-300 disabled:opacity-50"
+                disabled={loading || Boolean(phoneError)}
               >
                 {loading ? (
-                  <div className="flex items-center gap-2">
-                    <svg className="animate-spin w-5 h-5 text-white" viewBox="0 0 24 24" fill="none">
+                  <div className="flex items-center gap-2 justify-center">
+                    <svg
+                      className="animate-spin w-5 h-5 text-white"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
                       <circle
                         className="opacity-25"
-                        cx="12" cy="12" r="10"
+                        cx="12"
+                        cy="12"
+                        r="10"
                         stroke="currentColor"
                         strokeWidth="4"
                       ></circle>
@@ -221,7 +279,6 @@ export default function Popup() {
                 ) : (
                   "Submit"
                 )}
-
               </button>
             </div>
           </form>
