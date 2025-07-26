@@ -9,7 +9,14 @@ const nodemailer = require("nodemailer");
 const app = express();
 
 // 🌐 Allow all origins (not recommended for production)
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://og-final-frontend.onrender.com",
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
 
 app.use(express.json());
 
