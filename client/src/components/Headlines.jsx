@@ -45,11 +45,11 @@ const Headlines = () => {
           <span className="text-col">We said nah.</span>
         </div>
         <div className="w-full overflow-hidden">
-          <div className="flex gap-4 md:gap-10 overflow-x-auto snap-x snap-mandatory lg:gap-0 px-4 md:px-0 mx-auto hide-scroll ">
+          <div className="flex gap-5 md:gap-10 overflow-x-auto snap-x snap-mandatory lg:gap-0 px-4 md:px-0 mx-auto hide-scroll ">
             {cardsData.map((card, index) => (
               <div
                 key={index}
-                className="flex-none w-[calc((100%-(1*16px))/1.137)] md:w-[calc((100%-(2*40px))/3)] lg:w-[calc((100%-(0*20px))/4)]"
+                className="flex-none w-[calc((100%-(1*20px))/1.13)] md:w-[calc((100%-(2*40px))/3)] lg:w-[calc((100%-(0*20px))/4)]"
               >
                 <div className="flex flex-col h-full">
                   <div className="card-img">
