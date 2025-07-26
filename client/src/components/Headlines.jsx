@@ -51,7 +51,7 @@ const Headlines = () => {
                 key={index}
                 className="flex-none w-[calc((100%-(1*20px))/1.5)] md:w-[calc((100%-(2*40px))/3)] lg:w-[calc((100%-(0*20px))/4)]"
               >
-                <div className="flex flex-col">
+                <div className="flex flex-col h-full">
                   <div className="card-img">
                     <img
                       src={card.image}
@@ -59,7 +59,7 @@ const Headlines = () => {
                       className="w-full"
                     />
                   </div>
-                  <div className="card-container ">
+                  <div className="card-container">
                     <div className="card-subheading">
                       Source - {card.source}
                     </div>
