@@ -21,7 +21,7 @@ const VideoFeatureSection = () => {
           <div className="iphone-frame">
             <div className="iphone-screen">
               <video
-                className="frame-video"
+                className="frame-video rounded-[44px]"
                 ref={videoRef}
                 src={demoVideo}
                 autoPlay
