@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import demoVideo from '../assets/video-og.mp4'; // replace with your video path
 import iphoneFrame from '../assets/iphone-16-mockup.webp'; // replace with your iPhone frame image
-
+import { VscMute, VscUnmute } from "react-icons/vsc";
 const VideoFeatureSection = () => {
   const videoRef = useRef(null);
   const [isMuted, setIsMuted] = useState(true);
@@ -31,8 +31,15 @@ const VideoFeatureSection = () => {
               />
             </div>
 
-            <button className="mute-button" onClick={toggleMute}>
-              {isMuted ? 'Unmute' : 'Mute'}
+            <button
+              className="mute-button !bg-transparent"
+              onClick={toggleMute}
+            >
+              {isMuted ? (
+                <VscUnmute className="w-[20px] h-[20px]" />
+              ) : (
+                <VscMute className="w-[20px] h-[20px]" />
+              )}
             </button>
             <img src={iphoneFrame} alt="iPhone Frame" className="frame-img" />
           </div>
@@ -44,11 +51,19 @@ const VideoFeatureSection = () => {
             This is the <span className="text-col">world of OG</span>.
           </h2>
           <p className="videosw-description">
-            Every bottle connects you to more <span className="boldk">exclusive offers, real-time updates,</span> and <span className="boldk">access to perks</span> you did not expect from water. Scan the code to unlock it all, from discounts to bottle verification. With OG wtr you are not just staying hydrated, you are staying ahead.
+            Every bottle connects you to more{" "}
+            <span className="boldk">exclusive offers, real-time updates,</span>{" "}
+            and <span className="boldk">access to perks</span> you did not
+            expect from water. Scan the code to unlock it all, from discounts to
+            bottle verification. With OG wtr you are not just staying hydrated,
+            you are staying ahead.
           </p>
           <p className="sndfgbdsj">It started with a simple thought</p>
           <p className="videosw-description">
-            Despite being a daily essential, it lacked character, trust, and innovation. That’s where OG WTR began. We set out to create water that looks good, serves a purpose and speaks to today’s consumer without compromising on purity and quality.
+            Despite being a daily essential, it lacked character, trust, and
+            innovation. That’s where OG WTR began. We set out to create water
+            that looks good, serves a purpose and speaks to today’s consumer
+            without compromising on purity and quality.
           </p>
         </div>
       </div>
