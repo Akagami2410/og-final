@@ -638,4 +638,7 @@ ul {
         bottom: 50px !important;
         right: 15px !important;
     }
+    .iphone-screen,.iphone-screen video {
+        border-radius: 30px !important;
+    }
 }
