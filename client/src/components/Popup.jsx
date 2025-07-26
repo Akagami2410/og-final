@@ -33,7 +33,7 @@ export default function Popup() {
     const { name, value } = e.target;
 
     if (name === "phone") {
-      // Allow only digits and max length 10
+      // Remove non-digit chars, limit to 10 digits max
       const cleaned = value.replace(/\D/g, "").slice(0, 10);
       setFormData((prev) => ({ ...prev, [name]: cleaned }));
       const err = validatePhone(cleaned);
@@ -45,7 +45,7 @@ export default function Popup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (phoneError) return; // prevent submit if phone invalid
+    if (phoneError) return; // block submit if phone invalid
     setLoading(true);
 
     try {
