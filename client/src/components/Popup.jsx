@@ -29,7 +29,7 @@ export default function Popup() {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/send", {
+      const res = await fetch("https://og-final-backend.onrender.com/api/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
