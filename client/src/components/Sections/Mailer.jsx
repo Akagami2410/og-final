@@ -1,6 +1,6 @@
 import { useContext,useEffect } from "react";
 import OverlayContext from "../../context/OverlayContext";
-import image from '../../assets/images/bottle.png';
+import image from "../../assets/images/Bottle.png";
 import button from '../../assets/images/button.png';
 
 
