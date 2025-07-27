@@ -52,7 +52,7 @@ const Headlines = () => {
                       className="w-full"
                     />
                   </div>
-                  <div className="card-container">
+                  <div className="card-container !max-h-[max-content]">
                     <div className="card-subheading">
                       Source - {card.source}
                     </div>
