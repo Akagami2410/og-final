@@ -12,13 +12,15 @@ const app = express();
 const allowedOrigins = [
   "https://og-final-frontend.onrender.com",
   "https://ogwater.in",
+  "https://www.ogwater.in", // Add this in case user hits with www subdomain
 ];
 
 app.use(
   cors({
     origin: function (origin, callback) {
-      // Allow requests with no origin (like mobile apps or curl)
-      if (!origin) return callback(null, true);
+      console.log("Incoming origin:", origin); // <== Add this line
+
+      if (!origin) return callback(null, true); // Allow requests like curl or Postman
       if (allowedOrigins.includes(origin)) {
         return callback(null, true);
       } else {
