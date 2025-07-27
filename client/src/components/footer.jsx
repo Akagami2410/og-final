@@ -30,20 +30,23 @@ const Footer = () => {
 
         <div className="cloud-salsa-mail">
           <h4>Write to us</h4>
-          <a href="mailto:info@ogwater.in" className="max-w-[max-content]">
+          <a href="mailto:info@ogwater.in" className="md:max-w-[max-content]">
             info@ogwater.in
           </a>
-          <a href="mailto:support@ogwater.in" className="max-w-[max-content]">
+          <a
+            href="mailto:support@ogwater.in"
+            className="md:max-w-[max-content]"
+          >
             support@ogwater.in
           </a>
         </div>
 
         <div className="moon-cabbage-call">
           <h4>Talk to us</h4>
-          <a href="tel:+919871169694" className="max-w-[max-content]">
+          <a href="tel:+919871169694" className="md:max-w-[max-content]">
             +91-9871169694
           </a>
-          <a href="tel:+911140071346" className="max-w-[max-content]">
+          <a href="tel:+911140071346" className="md:max-w-[max-content]">
             +91-11-40071346
           </a>
         </div>
