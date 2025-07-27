@@ -1,6 +1,4 @@
-import React, { useRef, useState } from 'react';
-import demoVideo from '../assets/video-og.mp4'; // replace with your video path
-import iphoneFrame from '../assets/iphone-16-mockup.webp'; // replace with your iPhone frame image
+import React, { useRef, useState } from "react";
 import { VscMute, VscUnmute } from "react-icons/vsc";
 const VideoFeatureSection = () => {
   const videoRef = useRef(null);
@@ -23,7 +21,7 @@ const VideoFeatureSection = () => {
               <video
                 className="frame-video rounded-[44px]"
                 ref={videoRef}
-                src={demoVideo}
+                src="/assets/video-og.mp4"
                 autoPlay
                 muted={isMuted}
                 loop
@@ -36,12 +34,16 @@ const VideoFeatureSection = () => {
               onClick={toggleMute}
             >
               {isMuted ? (
-                <VscUnmute className="w-[20px] h-[20px]" />
-              ) : (
                 <VscMute className="w-[20px] h-[20px]" />
+              ) : (
+                <VscUnmute className="w-[20px] h-[20px]" />
               )}
             </button>
-            <img src={iphoneFrame} alt="iPhone Frame" className="frame-img" />
+            <img
+              src="/assets/iphone-16-mockup.webp"
+              alt="iPhone Frame"
+              className="frame-img"
+            />
           </div>
         </div>
 

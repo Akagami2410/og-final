@@ -1,8 +1,9 @@
 import { createRoot } from 'react-dom/client'
 import Wrapper from './context/Wrapper.jsx'
-import './footer.css';
-import './App.css';
-import './font.css';
+import "./font.css";
+import "./index.css";
+import "./App.css";
+import "./footer.css";
 import App from './App.jsx'
 import Overlay from './components/Overlay.jsx'
 import Popup from './components/Popup.jsx'

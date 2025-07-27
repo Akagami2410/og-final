@@ -1,10 +1,7 @@
-import React from 'react';
-import footerTop from '../assets/footer-top.png'
-
 const FooterTop = () => {
   return (
     <div className="skjbfjw">
-        <img src={footerTop} />
+      <img src="/assets/footer-top.png" />
     </div>
   );
 };

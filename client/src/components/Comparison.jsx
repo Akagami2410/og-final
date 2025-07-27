@@ -1,9 +1,3 @@
-import React from 'react';
-import bottleImage from '../assets/bottle.webp';
-import regBottle from '../assets/regular-bottle.webp';
-import mobileBottle from '../assets/bottle-mob.webp';
-import mobileRegBottle from '../assets/regular-bottle-mob.webp';
-
 const Comparison = () => {
   return (
     <div>
@@ -18,12 +12,12 @@ const Comparison = () => {
           <div className="flex max-lg:flex-col  border-[4px] border-[#DEFFBD] rounded-[24px] bg-[#FAFFF6] pt-[34px] px-4 lg:px-[58px] pb-0 max-lg:pb-12 min-w-[173px] w-[576px]">
             <div className="imaage-container flex justify-center">
               <img
-                src={bottleImage}
+                src="/assets/bottle.webp"
                 alt="OG Water Bottle"
                 className="bottle-img max-lg:hidden"
               />
               <img
-                src={mobileBottle}
+                src="/assets/bottle-mob.webp"
                 alt="OG Water Mobile Bottle"
                 className="bottle-img lg:hidden"
               />
@@ -63,12 +57,12 @@ const Comparison = () => {
           <div className="flex flex-row-reverse max-lg:flex-col border-[4px] border-[#EFEFEF] rounded-[24px] bg-[#FAFAFA] pt-[34px] px-4 lg:px-[58px] pb-0 max-lg:pb-12 min-w-[173px] w-[576px]">
             <div className="imaage-container flex justify-center">
               <img
-                src={regBottle}
+                src="/assets/regular-bottle.webp"
                 alt="Regular Bottle"
                 className="bottle-img max-lg:hidden"
               />
               <img
-                src={mobileRegBottle}
+                src="/assets/regular-bottle-mob.webp"
                 alt="Mobile Regular Bottle"
                 className="bottle-img lg:hidden"
               />

@@ -1,15 +1,15 @@
 import { useContext } from "react";
 import ZoomContext from "../../context/ZoomContext.jsx";
 
-import image1 from '../../assets/images/image-1.png';
-import image2 from '../../assets/images/image-2.png';
-import image3 from '../../assets/images/image-3.png';
-import image4 from '../../assets/images/image-4.png';
-import image5 from '../../assets/images/image-5.png';
-import image6 from '../../assets/images/image-6.png';
-import image7 from '../../assets/images/image-7.png';
-import image8 from '../../assets/images/image-8.png';
-import image9 from '../../assets/images/image-9.png';
+const image1 = "assets/images/image-1.png";
+const image2 = "assets/images/image-2.png";
+const image3 = "assets/images/image-3.png";
+const image4 = "assets/images/image-4.png";
+const image5 = "assets/images/image-5.png";
+const image6 = "assets/images/image-6.png";
+const image7 = "assets/images/image-7.png";
+const image8 = "assets/images/image-8.png";
+const image9 = "assets/images/image-9.png";
 
 import { useRef, useEffect } from 'react';
 

@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import logo from '../assets/og-logo.svg';
+import React, { useEffect, useState } from "react";
 
 const Navbar = () => {
   const [isShrunk, setIsShrunk] = useState(false);
@@ -9,16 +8,16 @@ const Navbar = () => {
       setIsShrunk(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header className={`navbar ${isShrunk ? 'navbar-shrink' : ''}`}>
+    <header className={`navbar ${isShrunk ? "navbar-shrink" : ""}`}>
       <img
-        src={logo}
+        src="/assets/og-logo.svg"
         alt="OG Waters"
-        className={`navbar-logo ${isShrunk ? 'logo-shrink' : ''}`}
+        className={`navbar-logo ${isShrunk ? "logo-shrink" : ""}`}
       />
     </header>
   );
