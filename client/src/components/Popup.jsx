@@ -22,9 +22,9 @@ export default function Popup() {
 
   const validatePhone = (phone) => {
     // Indian mobile numbers: 10 digits, starts with 7,8,9
-    const phoneRegex = /^[789]\d{9}$/;
+    const phoneRegex = /^[6789]\d{9}$/;
     if (!phoneRegex.test(phone)) {
-      return "Enter valid 10-digit Indian mobile number starting with 7,8,9";
+      return "Enter valid 10-digit Indian mobile number";
     }
     return "";
   };
