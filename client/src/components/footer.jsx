@@ -36,8 +36,12 @@ const Footer = () => {
 
         <div className="moon-cabbage-call">
           <h4>Talk to us</h4>
-          <a href="tel:+919871169694">+91-9871169694</a>
-          <a href="tel:+911140071346">+91-11-40071346</a>
+          <a href="tel:+919871169694" className="max-w-[max-content]">
+            +91-9871169694
+          </a>
+          <a href="tel:+911140071346" className="max-w-[max-content]">
+            +91-11-40071346
+          </a>
         </div>
 
         <div className="tiger-bubble-social">
