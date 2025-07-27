@@ -8,20 +8,15 @@ const nodemailer = require("nodemailer");
 
 const app = express();
 
-// 🌐 Allow all origins (not recommended for production)
-const allowedOrigins = [
-  "https://og-final-frontend.onrender.com",
-  "https://ogwater.in",
-  "https://www.ogwater.in", // Add this in case user hits with www subdomain
-];
 
 app.use(
   cors({
     origin: function (origin, callback) {
-      console.log("Incoming origin:", origin); // <== Add this line
+      console.log("Incoming origin:", origin);
 
-      if (!origin) return callback(null, true); // Allow requests like curl or Postman
-      if (allowedOrigins.includes(origin)) {
+      if (!origin) return callback(null, true);
+
+      if (origin === "https://www.ogwater.in") {
         return callback(null, true);
       } else {
         return callback(new Error("Not allowed by CORS"));
@@ -31,7 +26,6 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
-
 
 
 app.use(express.json());
