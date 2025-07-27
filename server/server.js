@@ -9,13 +9,27 @@ const nodemailer = require("nodemailer");
 const app = express();
 
 // 🌐 Allow all origins (not recommended for production)
+const allowedOrigins = [
+  "https://og-final-frontend.onrender.com",
+  "https://ogwater.in",
+];
+
 app.use(
   cors({
-    origin: "https://og-final-frontend.onrender.com",
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      } else {
+        return callback(new Error("Not allowed by CORS"));
+      }
+    },
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
 
 
 app.use(express.json());
