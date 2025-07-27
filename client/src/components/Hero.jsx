@@ -8,6 +8,9 @@ const Hero = () => {
             src="/assets/Hero-desktop.webp"
             alt="Hero Banner"
             className="hero-image"
+            fetchpriority="high"
+            decoding="async"
+            loading="eager"
           />
         </picture>
       </a>
