@@ -479,7 +479,7 @@ ul {
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .videosw-description {
-        margin-top: -10px !important;
+        margin-top: -15px !important;
     }
     .videosw-columns {
         flex-direction: column;
