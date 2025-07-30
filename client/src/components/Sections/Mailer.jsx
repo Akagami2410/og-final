@@ -23,7 +23,7 @@ export default function Mailer() {
 
   return (
     <section className="mailer bg-gradient-to-b from-[#FFFFFF] to-[#E4FBFF]">
-      <div className="flex flex-col pr-0 md:flex-row pt-20 justify-center md:pl-10">
+      <div className="flex flex-col pr-0 md:flex-row pt-20 justify-center md:pl-10 gap[24px]">
         <div className="left pr-[38px] pl-[38px] w-full flex flex-col justify-start items-center md:w-1/2 md:pr-0 md:pl-0 md:items-start">
           <div className="left-1 hidden md:contents">
             <h2 className="text-xl lg:text-2xl text-(--candypink) font-absolute">
