@@ -111,7 +111,7 @@ export default function Popup() {
             </svg>
           </button>
         </div>
-        <div className="p-4">
+        <div className="p-4 md:p-10">
           <h2 class="font-absolute text-[22px] font-bold mb-8 md:text-[36px] md:mb-20">Collaborate with OG Wtr</h2>
 
 
