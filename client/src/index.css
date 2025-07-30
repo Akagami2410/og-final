@@ -650,4 +650,12 @@ ul {
     .iphone-screen,.iphone-screen video {
         border-radius: 30px !important;
     }
+  @media (max-width:376px){
+    .mute-button {
+        bottom: 50px !important;
+        right: 15px !important;
+    }
+    .iphone-screen,.iphone-screen video {
+        border-radius: 40px !important;
+    }
 }
