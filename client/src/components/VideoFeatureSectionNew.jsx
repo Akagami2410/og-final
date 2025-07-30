@@ -50,13 +50,11 @@ const VideoFeatureSectionNew = () => {
         {/* Right: Text */}
         <div className="videosw-column text-columns">
           <h2 className="section-heading-videos">
-            FSSAI adds Mineral water under{" "}
-            <span className="text-cols">high risk food category</span>
+            FSSAI CLASSIFIES PACKAGED DRINKING WATER & MINERAL WATER AS{" "}
+            <span className="text-cols">HIGH-RISK FOOD ITEMS</span>
           </h2>
           <p className="videosw-description">
-            Going forward, packaged drinking water and mineral water
-            manufacturers will have their businesses audited by a #FSSAI
-            recognised food safety auditing agency every year.
+            Due to rising concerns over quality and consumer safety, FSSAI has placed packaged drinking and mineral water under the high-risk food category. Manufacturers will now be required to undergo mandatory annual audits by FSSAI-approved food safety agencies.
           </p>
           <p className="sndfgbdsjs">Source: NDTV Profit</p>
 
