@@ -50,7 +50,7 @@ const VideoFeatureSectionNew = () => {
         {/* Right: Text */}
         <div className="videosw-column text-columns">
           <h2 className="section-heading-videos">
-            FSSAI CLASSIFIES PACKAGED DRINKING WATER & MINERAL WATER AS{" "}
+            FSSAI CLASSIFIES PACKAGED DRINKING WATER{" "}
             <span className="text-cols">HIGH-RISK FOOD ITEMS</span>
           </h2>
           <p className="videosw-description">
