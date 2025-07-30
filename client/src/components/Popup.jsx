@@ -112,7 +112,7 @@ export default function Popup() {
           </button>
         </div>
         <div className="p-10">
-          <h2 className="font-anton text-4xl mb-20">Collaborate with OG Wtr</h2>
+          <h2 className="font-Absolute text-[18px] mb-20">Collaborate with OG Wtr</h2>
           <form
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
             onSubmit={handleSubmit}
