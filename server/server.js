@@ -9,6 +9,12 @@ const nodemailer = require("nodemailer");
 const app = express();
 
 
+const allowedOrigins = [
+  "https://www.ogwater.in",
+  "https://og-final-frontend.onrender.com",
+  "https://ogwtr.in"
+];
+
 app.use(
   cors({
     origin: function (origin, callback) {
@@ -16,7 +22,7 @@ app.use(
 
       if (!origin) return callback(null, true);
 
-      if (origin === "https://www.ogwater.in") {
+      if (allowedOrigins.includes(origin)) {
         return callback(null, true);
       } else {
         return callback(new Error("Not allowed by CORS"));
@@ -26,6 +32,7 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
 
 
 app.use(express.json());
