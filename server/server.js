@@ -54,7 +54,7 @@ app.post("/api/send", (req, res) => {
   });
 
   const mailOptions = {
-    from: `"Og Waters" <no-reply@ogwater.in>`,
+    from: `"Og Wtr" <no-reply@ogwater.in>`,
     to: "info@ogwater.in",
     subject: "New OG Wtr Collaboration Request",
     html: `
@@ -70,7 +70,7 @@ app.post("/api/send", (req, res) => {
   };
 
   const userMailOptions = {
-    from: `"Website Name" <no-reply@ogwater.in>`,
+    from: `"Og Wtr" <no-reply@ogwater.in>`,
     to: email,
     subject: "✅ We’ve received your form!",
     html: `
