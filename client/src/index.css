@@ -659,4 +659,7 @@ ul {
     .iphone-screen,.iphone-screen video {
         border-radius: 40px !important;
     }
+    .iphone-screen {
+      left: 1px !important;
+    }
 }
